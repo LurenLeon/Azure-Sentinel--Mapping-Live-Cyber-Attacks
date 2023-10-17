@@ -1,6 +1,5 @@
 # Azure-Sentinel--Mapping-Live-Cyber-Attacks
 
-## Azure Sentinel Live Cyber Attack Tracking Lab
 
 This lab provides a hands-on experience for tracking live cyber attacks using Azure Sentinel and mapping them for analysis.
 
