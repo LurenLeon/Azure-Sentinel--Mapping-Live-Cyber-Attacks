@@ -81,21 +81,26 @@ Create network security group- Delete original inbound rule, add an inbound rule
 
 
 ## Step 3: Create a Log Analytics Workspace 
-Search for Log Analytics Workspace on Azure, create Log Analytics workspace
 
-Subscription: Pay as you go
-Resource group: Choose the honeypotlab
-Name: LAWhoneypot
-Region: West US 2
+Search for Log Analytics Workspace on Azure, create Log Analytics Workspace
+
+Copy the following when creating:
+- **Subscription:** Pay as you go
+- **Resource group:** Choose the `honeypotlab`
+- **Name:** LAWhoneypot
+- **Region:** West US 2
+
 
 
 ## Step 4: Configure Microsoft Defender for Cloud
 
-Search for Microsoft Defender for the Cloud on Azure
-On left side bar, look for management section, and click on environment settings
-Click on LAWhoneypot
-Turn off SQL Servers on Machines, click save
-Click Data collection, choose "All Events", click save
+Follow these steps to configure Microsoft Defender for Cloud on Azure:
+
+- Search for Microsoft Defender for the Cloud on Azure.
+- On the left side bar, navigate to the management section and click on "Environment Settings."
+- Click on the environment named "LAWhoneypot."
+- Turn off SQL Servers on Machines, and then click save.
+- Click on Data collection, choose "All Events," and click save.
 
 
 
