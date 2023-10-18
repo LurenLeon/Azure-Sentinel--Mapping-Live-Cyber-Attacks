@@ -1,16 +1,18 @@
 # Azure-Sentinel--Mapping-Live-Cyber-Attacks
 
-Table of Contents
-Introduction
-Prerequisites
-Setup
-Usage
-Architecture
-Sample Scenario
-Contributing
-License
+## Table of Contents
 
-Introduction
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Setup](#setup)
+4. [Usage](#usage)
+5. [Architecture](#architecture)
+6. [Sample Scenario](#sample-scenario)
+7. [Contributing](#contributing)
+8. [License](#license)
+
+
+## Introduction
 <!-- Provide a detailed introduction to your project, its purpose, and what users can expect to achieve with it -->
 
 This lab provides a hands-on experience for tracking live cyber attacks using Azure Sentinel and mapping them for analysis.
@@ -20,51 +22,66 @@ As an overview, this lab will involve a honeypot exposed to the internet, collec
 We will use a PowerShell Script that will take the IP addresses from attempted failed logins and insert them onto ipgeolocation. These logs will be used to create a query in Sentinel to map the geographic locations.
 
 
-Prerequisites
+## Prerequisites
 <!-- List any prerequisites or dependencies that users need to have before using your lab -->
 Before you begin, ensure you have:
 
-An active Azure subscription.
-Azure Sentinel workspace set up.
-Permissions to create and manage resources in Azure.
-Remote Desktop Protocol (RDP)
-An account on IPGeolocation.io for the API Key
-Custom Powershell Script (Provided by Josh Madakor)
+### Prerequisites
+
+Before you begin, ensure you have the following:
+
+- An active Azure subscription.
+- Azure Sentinel workspace set up.
+- Permissions to create and manage resources in Azure.
+- Remote Desktop Protocol (RDP) access.
+- An account on [IPGeolocation.io](https://ipgeolocation.io/) for the API Key.
+- Custom PowerShell Script (Provided by Josh Madakor).
+
 
 <h2>Step 1: Creating your account on Azure </h2>
 Create an Azure free account, insert credit card information and receive $200 free credits. 
 
-Step 2: Create a Honeypot Virtual Machine
+## Step 2: Create a Honeypot Virtual Machine
 
 On the search bar, search for Virtual Machines, click create virtual machine.
 
-- Subscription group: Pay as you go
-- Resource group: Honeypotlab
-- Virtual machine name: Honeypot-vm
-- Region: West US 3
-- Security Type: Standard
-- Image: Windows 10 Pro
-- Size: Standard
-- Create your username and password for the VM.
-- Public inbound ports: Allow selected ports
-- Select inbound ports: RDP (3389)
+### Azure Sentinel Honeypot Lab Configuration
+
+| Configuration           | Value               |
+|--------------------------|---------------------|
+| Subscription group       | Pay as you go       |
+| Resource group           | Honeypotlab         |
+| Virtual machine name     | Honeypot-vm         |
+| Region                   | West US 3           |
+| Security Type            | Standard            |
+| Image                    | Windows 10 Pro      |
+| Size                     | Standard            |
+| Username and Password    | Create your own     |
+| Public Inbound Ports     | Allow selected ports|
+| Selected Inbound Ports   | RDP (3389)          |
+
 
 Leave Disks section as default
 
 On the networking section, find NIC network security group, change to advanced 
 Create network security group- Delete original inbound rule, add an inbound rule
 
-- Source: Any
-- Source port ranges=*
-- Destination: Any
-- Service: Custom
-- Destination port ranges: *
-- Protocol: Any
-- Action: Allow
-- Priority: 100
-- Name: DANGER_ANY_IN
+### Firewall Rule Configuration - DANGER_ANY_IN
 
-Step 3: Create a Log Analytics Workspace 
+| Configuration             | Value           |
+|---------------------------|-----------------|
+| Source                    | Any             |
+| Source Port Ranges        | *               |
+| Destination               | Any             |
+| Service                   | Custom          |
+| Destination Port Ranges   | *               |
+| Protocol                  | Any             |
+| Action                    | Allow           |
+| Priority                  | 100             |
+| Name                      | DANGER_ANY_IN   |
+
+
+## Step 3: Create a Log Analytics Workspace 
 Search for Log Analytics Workspace on Azure, create Log Analytics workspace
 
 Subscription: Pay as you go
@@ -73,7 +90,7 @@ Name: LAWhoneypot
 Region: West US 2
 
 
-Step 4: Configure Microsoft Defender for Cloud
+## Step 4: Configure Microsoft Defender for Cloud
 
 Search for Microsoft Defender for the Cloud on Azure
 On left side bar, look for management section, and click on environment settings
@@ -89,8 +106,8 @@ Return to Log Analytics workspace
 Find virtual machine section, and click "Connect" to connect the workspace to the honeypotvm
 
 
-• Setup Microsoft Sentinel- Find and click create
-o Click Log Analytics workspace that was created- Add
+-Setup Microsoft Sentinel- Find and click create
+-Click Log Analytics workspace that was created- Add
 
 
 
