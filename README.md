@@ -31,38 +31,38 @@ Remote Desktop Protocol (RDP)
 An account on IPGeolocation.io for the API Key
 Custom Powershell Script (Provided by Josh Madakor)
 
-Step 1: Creating your account on Azure 
+<h2>Step 1: Creating your account on Azure </h2>
 Create an Azure free account, insert credit card information and receive $200 free credits. 
 
 Step 2: Create a Honeypot Virtual Machine
 
 On the search bar, search for Virtual Machines, click create virtual machine.
 
-Subscription group: Pay as you go
-Resource group: Honeypotlab
-Virtual machine name: Honeypot-vm
-Region: West US 3
-Security Type: Standard
-Image: Windows 10 Pro
-Size: Standard
-Create your username and password for the VM.
-Public inbound ports: Allow selected ports
-Select inbound ports: RDP (3389)
+- Subscription group: Pay as you go
+- Resource group: Honeypotlab
+- Virtual machine name: Honeypot-vm
+- Region: West US 3
+- Security Type: Standard
+- Image: Windows 10 Pro
+- Size: Standard
+- Create your username and password for the VM.
+- Public inbound ports: Allow selected ports
+- Select inbound ports: RDP (3389)
 
 Leave Disks section as default
 
 On the networking section, find NIC network security group, change to advanced 
 Create network security group- Delete original inbound rule, add an inbound rule
 
-Source: Any
-Source port ranges=*
-Destination: Any
-Service: Custom
-Destination port ranges: *
-Protocol: Any
-Action: Allow
-Priority: 100
-Name: DANGER_ANY_IN
+- Source: Any
+- Source port ranges=*
+- Destination: Any
+- Service: Custom
+- Destination port ranges: *
+- Protocol: Any
+- Action: Allow
+- Priority: 100
+- Name: DANGER_ANY_IN
 
 Step 3: Create a Log Analytics Workspace 
 Search for Log Analytics Workspace on Azure, create Log Analytics workspace
