@@ -20,8 +20,6 @@ As an overview, this lab will involve a honeypot exposed to the internet, collec
 
 We will use a PowerShell Script that will take the IP addresses from attempted failed logins and insert them onto ipgeolocation. These logs will be used to create a query in Sentinel to map the geographic locations.
 
-
-## Prerequisites
 <!-- List any prerequisites or dependencies that users need to have before using your lab -->
 Before you begin, ensure you have:
 
@@ -103,11 +101,15 @@ Follow these steps to configure Microsoft Defender for Cloud on Azure:
 - Click on Data collection, choose "All Events," and click save.
 
 
-
-
-
-Return to Log Analytics workspace
+## Step 5: Return to Log Analytics Workspace
 Find virtual machine section, and click "Connect" to connect the workspace to the honeypotvm
+
+| Configuration      | Value               |
+| ------------------- | ------------------- |
+| Subscription        | Azure Subscription 1|
+| Resource Group      | Honeypotlab         |
+| Name                | law-honeypot1       |
+| Region              | West US 2           |
 
 
 -Setup Microsoft Sentinel- Find and click create
