@@ -85,8 +85,15 @@ Search for Log Analytics Workspace on Azure, create Log Analytics Workspace
 Copy the following when creating:
 - **Subscription:** Pay as you go
 - **Resource group:** Choose the `honeypotlab`
-- **Name:** LAWhoneypot
+- **Name:** law-honeypot1 
 - **Region:** West US 2
+
+| Configuration      | Value               |
+| ------------------- | ------------------- |
+| Subscription        | Azure Subscription 1|
+| Resource Group      | Honeypotlab         |
+| Name                | law-honeypot1       |
+| Region              | West US 2           |
 
 
 
@@ -96,20 +103,21 @@ Follow these steps to configure Microsoft Defender for Cloud on Azure:
 
 - Search for Microsoft Defender for the Cloud on Azure.
 - On the left side bar, navigate to the management section and click on "Environment Settings."
-- Click on the environment named "LAWhoneypot."
+- Click on the environment named "law-honeypot1."
+
+# On Defender Plans: 
 - Turn off SQL Servers on Machines, and then click save.
-- Click on Data collection, choose "All Events," and click save.
+- Turn on Servers, click save.
+- On the right hand bar, click on Data collection, choose "All Events," and click save.
 
 
 ## Step 5: Return to Log Analytics Workspace
-Find virtual machine section, and click "Connect" to connect the workspace to the honeypotvm
+- Search for "Log Analytics Workspaces"
+- Select log-honeypot
+- On the right hand bar, under Workspace Data Sources, click "Virtual Machines"
+- Select the workspace name honeypot-vm
+- Click "Connect" to connect to the workspace to the honeypotvm
 
-| Configuration      | Value               |
-| ------------------- | ------------------- |
-| Subscription        | Azure Subscription 1|
-| Resource Group      | Honeypotlab         |
-| Name                | law-honeypot1       |
-| Region              | West US 2           |
 
 
 -Setup Microsoft Sentinel- Find and click create
