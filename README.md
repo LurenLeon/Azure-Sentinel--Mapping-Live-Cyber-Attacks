@@ -119,10 +119,28 @@ Follow these steps to configure Microsoft Defender for Cloud on Azure:
 - Click "Connect" to connect to the workspace to the honeypotvm
 
 
+## Step 6: Configure Microsoft Sentinel
+- Search for "Microsoft Sentinel"
+- Click "Create Microsoft Sentinel"
+- Select honeypot-log
+- Click add
 
--Setup Microsoft Sentinel- Find and click create
--Click Log Analytics workspace that was created- Add
+## Log into the VM via Remote Desktop Protocol (RDP) and Disable Firewall
+We want to make the VM accessible and exposed to the internet so we can easily collect attack data.
+- Go to Virtual Machines on Azure, find the honeypot-vm
+- Click on honeypot-vm and copy the IP address
+- Log into the VM with Remote Desktop Protocol (RDP) with your credentials made for the vm. You can find RDP on your Windows machine by searching for Remote Desktop Protocol. *Refer back to step 2 for credentials*
+- Once logged in, accept the certificate warning
+- Select NO for all chosen privacy settings on your device
+- On your VM search for "wf.msc" (Windows Defender Firewall)
+- Click "Windows Defender Firewall Properties"
+- Turn Firewall State OFF (For all profiles- Domain, Private, Public)
+- Hit Apply and Ok
 
+# To test that the firewall is off:
+- Ping the VM with: ping -t <VM IP>
+
+- 
 
 
 
