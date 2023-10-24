@@ -105,7 +105,7 @@ Follow these steps to configure Microsoft Defender for Cloud on Azure:
 - On the left side bar, navigate to the management section and click on "Environment Settings."
 - Click on the environment named "law-honeypot1."
 
-# On Defender Plans: 
+### On Defender Plans: 
 - Turn off SQL Servers on Machines, and then click save.
 - Turn on Servers, click save.
 - On the right hand bar, click on Data collection, choose "All Events," and click save.
@@ -137,10 +137,9 @@ We want to make the VM accessible and exposed to the internet so we can easily c
 - Turn Firewall State OFF (For all profiles- Domain, Private, Public)
 - Hit Apply and Ok
 
-# Step 8: To test that the firewall is off:
+### To test that the firewall is off:
 - Ping the VM with: ping -t <VM IP>
 
-- 
 
 
 
