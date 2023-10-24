@@ -125,7 +125,7 @@ Follow these steps to configure Microsoft Defender for Cloud on Azure:
 - Select honeypot-log
 - Click add
 
-## Log into the VM via Remote Desktop Protocol (RDP) and Disable Firewall
+## Step 7: Log into the VM via Remote Desktop Protocol (RDP) and Disable Firewall
 We want to make the VM accessible and exposed to the internet so we can easily collect attack data.
 - Go to Virtual Machines on Azure, find the honeypot-vm
 - Click on honeypot-vm and copy the IP address
@@ -137,7 +137,7 @@ We want to make the VM accessible and exposed to the internet so we can easily c
 - Turn Firewall State OFF (For all profiles- Domain, Private, Public)
 - Hit Apply and Ok
 
-# To test that the firewall is off:
+# Step 8: To test that the firewall is off:
 - Ping the VM with: ping -t <VM IP>
 
 - 
